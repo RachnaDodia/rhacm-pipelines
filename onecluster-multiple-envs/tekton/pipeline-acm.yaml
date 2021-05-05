@@ -65,10 +65,10 @@ spec:
     runAfter:
     - bookinfo-dev-deployment  
 
-  - name: bookinfo-prd-deployment
+  - name: bookinfo-prod-deployment
     taskRef:
       kind: Task        
-      name: bookinfo-prd-deployment
+      name: bookinfo-prod-deployment
     workspaces:
     - name: source
       workspace: shared-workspace
