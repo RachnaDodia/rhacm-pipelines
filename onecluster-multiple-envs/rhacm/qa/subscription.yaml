@@ -1,18 +1,16 @@
-
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
-  name: etherpad-acm-qa
-  namespace: etherpad-acm-qa
+  name: bookinfo-acm-qa
+  namespace: bookinfo-acm-qa
   labels:
-    app: etherpad-acm-qa
+    app: bookinfo-acm-qa
   annotations:
-    apps.open-cluster-management.io/github-path: app-resources/etherpad/qa
+    apps.open-cluster-management.io/github-path: app-resources/bookinfo/dev
 spec:
-  channel: etherpad-acm-qa/etherpad-app-latest
+  channel: bookinfo-acm-qa/bookinfo-app-latest
   placement:
     placementRef:
       kind: PlacementRule
-      name: qa-cluster
-
+      name: bookinfo-acm-qa
