@@ -53,4 +53,24 @@ spec:
     - name: source
       workspace: shared-workspace
     runAfter:
-    - create-namespaces      
+    - create-namespaces 
+    
+  - name: bookinfo-qa-deployment
+    taskRef:
+      kind: Task        
+      name: bookinfo-qa-deployment
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+    runAfter:
+    - bookinfo-dev-deployment  
+
+  - name: bookinfo-prd-deployment
+    taskRef:
+      kind: Task        
+      name: bookinfo-prd-deployment
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+    runAfter:
+    - bookinfo-qa-deployment
