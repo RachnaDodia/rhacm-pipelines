@@ -1,10 +1,13 @@
-
+apiVersion: v1                    
+kind: Namespace
+metadata:
+  name: bookinfo-acm-qa                             
 ---
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: etherpad-acm-qa
-  namespace: etherpad-acm-qa
+  name: bookinfo-acm-qa
+  namespace: bookinfo-acm-qa
 spec:
   componentKinds:
   - group: apps.open-cluster-management.io
@@ -15,4 +18,4 @@ spec:
     - key: app
       operator: In
       values:
-      - etherpad-acm-qa
+      - bookinfo-acm-qa
